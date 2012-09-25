@@ -500,6 +500,16 @@ title: Overview
 			<td class="default na">N/A</td>
 		</tr>
 		<tr>
+			<td class="key">is_current_class</td>
+			<td class="desc">The value of the <strong>class</strong> attribute to add to the current list element</td>
+			<td class="default na">current</td>
+		</tr>
+		<tr>
+			<td class="key">is_parent_class</td>
+			<td class="desc">The value of the <strong>class</strong> attribute to add to list elements that have sub-items.</td>
+			<td class="default na">parent</td>
+		</tr>
+		<tr>
 			<td class="key">note</td>
 			<td class="desc">The value of the <strong>data-note</strong> attribute to add to the outermost list element. Used for <a href="#notes">attaching notes</a> to the navigation</td>
 			<td class="default na">N/A</td>
@@ -518,6 +528,11 @@ title: Overview
 			<td class="key">hide_index</td>
 			<td class="desc">Whether or not it should display a link for the 'index' page in each section</td>
 			<td class="default">false</td>
+		</tr>
+		<tr>
+			<td class="key">ignore_pages</td>
+			<td class="desc">A list of <abbr title="Uniform Resource Locators">URL</abbr>:s to pages that are to be ignored when the items are generated, that corresponds to the <code>nice_url</code> property of your pages (sans the &quot;index.php/&quot;-bit, if you&rsquo;re not using mod_rewrite etc). Example: you want to ignore the pages "/foo", "/bar" and "/baz", so you use the macro like this <code>{{ nav.page_tree({ ignore_pages: ["/foo", "/bar", "/baz"] }) }}</code></td>
+			<td class="default">N/A</td>
 		</tr>
 	</table>
 	

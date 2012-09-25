@@ -13,7 +13,7 @@
 
 	{% for item in page_array %}
 	
-		{% if not ((item.name == 'index' and opts.hide_index and level != 1) or (opts.ignore_pages and item.nice_url in opts.ignore_pages)) %}
+		{% if not ((item.name == 'index' and opts.hide_index and level != 1) or (opts.ignore_pages and item.nice_url|replace({"index.php/": ""}) in opts.ignore_pages)) %}
 	
 		<li{% if item.is_current or item.is_parent %} class="{% if item.is_current %}{{ opts.is_current_class|default('current') }} {% endif %}{% if item.is_parent %}{{ opts.is_parent_class|default('parent') }}{% endif %}"{% endif %}>
 		{% if item.type == 'directory' %}
